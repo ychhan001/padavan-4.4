@@ -15,6 +15,8 @@ This project is based on original rt-n56u with latest mtk 4.4.198 kernel, which 
 
 
 - Supported devices
+  - SIM-AX1800T
+  - HAR-20S2U1
   - CR660x
   - JCG-Q20
   - JCG-AC860M
