@@ -1,9 +1,9 @@
-#define BOARD_PID		"HAR-20S2U1"
-#define BOARD_NAME		"HAR-20S2U1"
-#define BOARD_DESC		"HAR-20S2U1 Wireless Router"
+#define BOARD_PID		"G-AX1800B"
+#define BOARD_NAME		"G-AX1800B"
+#define BOARD_DESC		"G-AX1800B Wireless Router"
 #define BOARD_VENDOR_NAME	"Haier Technology"
-#define BOARD_VENDOR_URL	"http://Haier.com/"
-#define BOARD_MODEL_URL		"http://Haier.com/"
+#define BOARD_VENDOR_URL	"http://g.com/"
+#define BOARD_MODEL_URL		"http://g.com/"
 #define BOARD_BOOT_TIME		20
 #define BOARD_FLASH_TIME	120
 
