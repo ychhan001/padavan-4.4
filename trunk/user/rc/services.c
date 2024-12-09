@@ -560,6 +560,71 @@ void restart_frp(void){
 }
 #endif
 
+#if defined(APP_VNTS)
+void stop_vnts(void){
+	eval("/usr/bin/vnts.sh","stop");
+}
+
+void start_vnts(void){
+	int vnts_enable = nvram_get_int("vnts_enable");
+	if ( vnts_enable == 1)
+		eval("/usr/bin/vnts.sh","start");
+}
+
+void restart_vnts(void){
+	stop_vnts();
+	start_vnts();
+}
+#endif
+
+#if defined(APP_VNTCLI)
+void stop_vntcli(void){
+	eval("/usr/bin/vnt.sh","stop");
+}
+
+void start_vntcli(void){
+	int vntcli_enable = nvram_get_int("vntcli_enable");
+	if ( vntcli_enable == 1)
+		eval("/usr/bin/vnt.sh","start");
+}
+
+void restart_vntcli(void){
+	stop_vntcli();
+	start_vntcli();
+}
+#endif
+#if defined(APP_ALIST)
+void stop_alist(void){
+	eval("/usr/bin/alist.sh","stop");
+}
+
+void start_alist(void){
+	int alist_enable = nvram_get_int("alist_enable");
+	if ( alist_enable == 1)
+		eval("/usr/bin/alist.sh","start");
+}
+
+void restart_alist(void){
+	stop_alist();
+	start_alist();
+}
+#endif
+#if defined(APP_CLOUDFLARE)
+void stop_cloudflare(void){
+	eval("/usr/bin/cloudflare.sh","stop");
+}
+
+void start_cloudflare(void){
+	int cloudflare_enable = nvram_get_int("cloudflare_enable");
+	if ( cloudflare_enable == 1)
+		eval("/usr/bin/cloudflare.sh","start");
+}
+
+void restart_cloudflare(void){
+	stop_cloudflare();
+	start_cloudflare();
+}
+#endif
 void
 start_httpd(int restart_fw)
 {
@@ -852,6 +917,19 @@ stop_services(int stopall)
 #if defined(APP_FRP)
 	stop_frp();
 #endif
+#if defined(APP_VNTS)
+	stop_vnts();
+#endif
+#if defined(APP_ALIST)
+	stop_alist();
+#endif
+#if defined(APP_VNTCLI)
+	stop_vntcli();
+#endif
+#if defined(APP_CLOUDFLARE)
+	stop_cloudflare();
+#endif
+	
 	stop_networkmap();
 	stop_lltd();
 	stop_detect_internet();
