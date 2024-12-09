@@ -2331,7 +2331,23 @@ static int frps_status_hook(int eid, webs_t wp, int argc, char **argv)
 	return 0;
 }
 #endif
+#if defined (APP_VNTS)
+static int vnts_status_hook(int eid, webs_t wp, int argc, char **argv)
+{
+	int vnts_status_code = pids("vnts");
+	websWrite(wp, "function vnts_status() { return %d;}\n", vnts_status_code);
+	return 0;
+}
+#endif
 
+#if defined (APP_VNTCLI)
+static int vntcli_status_hook(int eid, webs_t wp, int argc, char **argv)
+{
+	int vntcli_status_code = pids("vnt-cli");
+	websWrite(wp, "function vntcli_status() { return %d;}\n", vntcli_status_code);
+	return 0;
+}
+#endif
 static int update_action_hook(int eid, webs_t wp, int argc, char **argv)
 {
 	char *up_action = websGetVar(wp, "connect_action", "");
@@ -4175,6 +4191,36 @@ static char mentohust_log_txt[] =
 
 #endif
 
+#if defined (APP_VNTCLI)
+static void
+do_vntcli_log_file(const char *url, FILE *stream)
+{
+	dump_file(stream, "/tmp/vnt-cli.log");
+	fputs("\r\n", stream);
+}
+
+static char vntcli_log_txt[] =
+"Content-Disposition: attachment;\r\n"
+"filename=vnt-cli.log"
+;
+
+#endif
+
+#if defined (APP_VNTS)
+static void
+do_vnts_log_file(const char *url, FILE *stream)
+{
+	dump_file(stream, "/tmp/vnts.log");
+	fputs("\r\n", stream);
+}
+
+static char vnts_log_txt[] =
+"Content-Disposition: attachment;\r\n"
+"filename=vnts.log"
+;
+
+#endif
+
 struct mime_handler mime_handlers[] = {
 	/* cached javascript files w/o translations */
 	{ "jquery.js", "text/javascript", NULL, NULL, do_file, 0 }, // 2012.06 Eagle23
@@ -4221,6 +4267,12 @@ struct mime_handler mime_handlers[] = {
 #endif
 #if defined(APP_MENTOHUST)
 	{ "mentohust.log", "application/force-download", mentohust_log_txt, NULL, do_mentohust_log_file, 1 },
+#endif
+#if defined(APP_VNTCLI)
+	{ "vnt-cli.log", "application/force-download", vntcli_log_txt, NULL, do_vntcli_log_file, 1 },
+#endif
+#if defined(APP_VNTS)
+	{ "vnts.log", "application/force-download", vnts_log_txt, NULL, do_vnts_log_file, 1 },
 #endif
 #if defined(APP_OPENVPN)
 	{ "client.ovpn", "application/force-download", NULL, NULL, do_export_ovpn_client, 1 },
@@ -4549,6 +4601,15 @@ struct ej_handler ej_handlers[] =
 #if defined (APP_FRP)
 	{ "frpc_status", frpc_status_hook},
 	{ "frps_status", frps_status_hook},
+#endif
+#if defined (APP_VNTS)
+	{ "vnts_status", vnts_status_hook},
+#endif
+#if defined (APP_VNTCLI)
+	{ "vntcli_status", vntcli_status_hook},
+#endif
+#if defined (APP_ALIST)
+	{ "alist_status", alist_status_hook},
 #endif
 #if defined (APP_ADBYBY)
 	{ "adbyby_action", adbyby_action_hook},
