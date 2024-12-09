@@ -553,6 +553,16 @@ watchdog_on_timer(void)
 
 	inet_handler(is_ap_mode);
 
+	time_t current_time = time(NULL);
+	if (current_time - last_exec_time >= 80) {
+		if (access("/tmp/script/_opt_script_check", F_OK) == 0) {
+			if (system("pidof _opt_script_check > /dev/null") != 0) {
+        			system("/tmp/script/_opt_script_check &");
+        		}
+    		}
+    		last_exec_time = current_time;
+    	}
+	
 	/* update kernel timezone daylight */
 	setkernel_tz();
 
