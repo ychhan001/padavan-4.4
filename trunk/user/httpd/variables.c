@@ -83,6 +83,19 @@
 			{"zero_route_x", "24", NULL, FALSE},
 			{0,0,0,0}
 		};
+        struct variable variables_VNTCLI_VNTCLImapp[] = {
+			{"vntcli_mappnet_x", "24", NULL, FALSE},
+			{"vntcli_mappport_x", "24", NULL, FALSE},
+			{"vntcli_mappip_x", "24", NULL, FALSE},
+			{"vntcli_mapeerport_x", "24", NULL, FALSE},
+			{0,0,0,0}
+		};
+	struct variable variables_VNTCLI_VNTCLIroute[] = {
+			{"vntcli_name_x", "24", NULL, FALSE},
+			{"vntcli_route_x", "24", NULL, FALSE},
+			{"vntcli_ip_x", "24", NULL, FALSE},
+			{0,0,0,0}
+		};
 	struct variable variables_SspConf_SspList[] = {
 			{"ssp_type_x", "24", NULL, FALSE},
 			{"ssp_name_x", "24", NULL, FALSE},
