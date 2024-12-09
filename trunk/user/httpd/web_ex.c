@@ -2581,6 +2581,26 @@ ej_firmware_caps_hook(int eid, webs_t wp, int argc, char **argv)
 #else
 	int found_app_frp = 0;
 #endif
+#if defined(APP_VNTS)
+	int found_app_vnts = 1;
+#else
+	int found_app_vnts = 0;
+#endif
+#if defined(APP_VNTCLI)
+	int found_app_vntcli = 1;
+#else
+	int found_app_vntcli = 0;
+#endif
+#if defined(APP_ALIST)
+	int found_app_alist = 1;
+#else
+	int found_app_alist = 0;
+#endif
+#if defined(APP_CLOUDFLARE)
+	int found_app_cloudflare = 1;
+#else
+	int found_app_cloudflare = 0;
+#endif
 #if defined(APP_VPNSVR)
 	int found_app_vpnsvr = 1;
 #else
@@ -2758,6 +2778,10 @@ ej_firmware_caps_hook(int eid, webs_t wp, int argc, char **argv)
 		"function found_app_aldriver() { return %d;}\n"
 		"function found_app_aliddns() { return %d;}\n"
 		"function found_app_frp() { return %d;}\n"
+		"function found_app_cloudflare() { return %d;}\n"
+		"function found_app_alist() { return %d;}\n"
+		"function found_app_vnts() { return %d;}\n"
+		"function found_app_vntcli() { return %d;}\n"
 		"function found_app_vpnsvr() { return %d;}\n"
 		"function found_app_vpncli() { return %d;}\n"
 		"function found_app_smartdns() { return %d;}\n"
@@ -2791,6 +2815,10 @@ ej_firmware_caps_hook(int eid, webs_t wp, int argc, char **argv)
 		found_app_aldriver,
 		found_app_aliddns,
 		found_app_frp,
+		found_app_cloudflare,
+		found_app_alist,
+		found_app_vnts,
+		found_app_vntcli,
 		found_app_vpnsvr,
 		found_app_vpncli,
 		found_app_smartdns,
