@@ -942,6 +942,25 @@
 	};
 #endif
 
+#if defined(APP_CLOUDFLARE)
+	struct variable variables_CLOUDFLARE[] = {
+			{"cloudflare_enable", "", NULL, EVM_RESTART_CLOUDFLARE },
+			{"cloudflare_interval", "", NULL, EVM_RESTART_CLOUDFLARE },
+			{"cloudflare_token", "", NULL, EVM_RESTART_CLOUDFLARE },
+			{"cloudflare_Email", "", NULL, EVM_RESTART_CLOUDFLARE },
+			{"cloudflare_Key", "", NULL, EVM_RESTART_CLOUDFLARE },
+			{"cloudflare_CA_Key", "", NULL, EVM_RESTART_CLOUDFLARE },
+			{"cloudflare_host", "", NULL, EVM_RESTART_CLOUDFLARE },
+			{"cloudflare_host2", "", NULL, EVM_RESTART_CLOUDFLARE },
+			{"cloudflare_host6", "", NULL, EVM_RESTART_CLOUDFLARE },
+			{"cloudflare_domian", "", NULL, EVM_RESTART_CLOUDFLARE },
+			{"cloudflare_domian2", "", NULL, EVM_RESTART_CLOUDFLARE },
+			{"cloudflare_domian6", "", NULL, EVM_RESTART_CLOUDFLARE },
+			{"scripts.ddns_script.sh", "File", NULL, EVM_RESTART_CLOUDFLARE},
+			{0,0,0,0}
+		};
+#endif
+
 #if defined(APP_DNSFORWARDER)
 	struct variable variables_dnsforwarderConf[] = {
 			{"dns_forwarder_enable", "", NULL, EVM_RESTART_DNSFORWARDER},
@@ -1028,6 +1047,62 @@
 			{"frpc_enable", "", NULL, EVM_RESTART_FRP},
 			{"frps_enable", "", NULL, EVM_RESTART_FRP},
 			{"scripts.frp_script.sh", "File", NULL, EVM_RESTART_FRP},
+			{0,0,0,0}
+	};
+#endif
+
+#if defined(APP_VNTS)
+	struct variable variables_VNTS[] = {
+			{"vnts_enable", "", NULL, EVM_RESTART_VNTS},
+			{"vnts_port", "", NULL, EVM_RESTART_VNTS},
+			{"vnts_token", "", NULL, EVM_RESTART_VNTS},
+			{"vnts_subnet", "", NULL, EVM_RESTART_VNTS},
+			{"vnts_netmask", "", NULL, EVM_RESTART_VNTS},
+			{"vnts_sfinger", "", NULL, EVM_RESTART_VNTS},
+			{"vnts_web_enable", "", NULL, EVM_RESTART_VNTS},
+			{"vnts_web_port", "", NULL, EVM_RESTART_VNTS},
+			{"vnts_web_user", "", NULL, EVM_RESTART_VNTS},
+			{"vnts_web_pass", "", NULL, EVM_RESTART_VNTS},
+			{"vnts_web_wan", "", NULL, EVM_RESTART_VNTS},
+			{"vnts_vnts_bin", "", NULL, EVM_RESTART_VNTS},
+			{"vnts_log", "", NULL, EVM_RESTART_VNTS},
+			{"vnts.log", "File", NULL, EVM_RESTART_VNTS},
+			{0,0,0,0}
+	};
+#endif
+
+#if defined(APP_VNTCLI)
+	struct variable variables_VNTCLI[] = {
+			{"vntcli_enable", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_token", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_ip", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_localadd", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_serip", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_model", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_key", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_log", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_proxy", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_first", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_wg", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_finger", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_serverw", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_desname", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_id", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_tunname", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_mtu", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_dns", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_stun", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_port", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_punch", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_comp", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_relay", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_wan", "", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_bin", "", NULL, EVM_RESTART_VNTCLI},
+			{"scripts.vnt.conf", "File", NULL, EVM_RESTART_VNTCLI},
+			{"vntcli_routenum_x", "", NULL, EVM_RESTART_VNTCLI},
+			{"VNTCLIroute", "Group", ARGV((char*)variables_VNTCLI_VNTCLIroute, "8", "55", "vntcli_routenum_x"), EVM_RESTART_VNTCLI},
+			{"vntcli_mappnum_x", "", NULL, EVM_RESTART_VNTCLI},
+			{"VNTCLImapp", "Group", ARGV((char*)variables_VNTCLI_VNTCLImapp, "8", "55", "vntcli_mappnum_x"), EVM_RESTART_VNTCLI},
 			{0,0,0,0}
 	};
 #endif
@@ -1158,6 +1233,43 @@
 			{"scripts.adbyby_host.sh", "File", NULL, EVM_RESTART_ADBYBY},
 			{"AdIPList", "Group", ARGV((char*)variables_AdbybyConf_AdIPList, "8", "55", "adbybyip_staticnum_x"), EVM_RESTART_ADBYBY},
 			{"AdRULESList", "Group", ARGV((char*)variables_AdbybyConf_AdRULESList, "8", "55", "adbybyrules_staticnum_x"), EVM_RESTART_ADBYBY},
+			{0,0,0,0}
+	};
+#endif
+
+#if defined(APP_ALIST)
+	struct variable variables_ALIST[] = {
+			{"alist_enable", "", NULL, EVM_RESTART_ALIST},
+			{"alist_site_url", "", NULL, EVM_RESTART_ALIST},
+			{"alist_cdn", "", NULL, EVM_RESTART_ALIST},
+			{"alist_expires", "", NULL, EVM_RESTART_ALIST},
+			{"alist_sqlite", "", NULL, EVM_RESTART_ALIST},
+			{"alist_sqlite_host", "", NULL, EVM_RESTART_ALIST},
+			{"alist_sqlite_port", "", NULL, EVM_RESTART_ALIST},
+			{"alist_sqlite_user", "", NULL, EVM_RESTART_ALIST},
+			{"alist_sqlite_pass", "", NULL, EVM_RESTART_ALIST},
+			{"alist_sqlite_name", "", NULL, EVM_RESTART_ALIST},
+			{"alist_sqlite_tab", "", NULL, EVM_RESTART_ALIST},
+			{"alist_db_file", "", NULL, EVM_RESTART_ALIST},
+			{"alist_address", "", NULL, EVM_RESTART_ALIST},
+			{"alist_port", "", NULL, EVM_RESTART_ALIST},
+			{"alist_sport", "", NULL, EVM_RESTART_ALIST},
+			{"alist_https", "", NULL, EVM_RESTART_ALIST},
+			{"alist_cert", "", NULL, EVM_RESTART_ALIST},
+			{"alist_key", "", NULL, EVM_RESTART_ALIST},
+			{"alist_temp", "", NULL, EVM_RESTART_ALIST},
+			{"alist_bleve", "", NULL, EVM_RESTART_ALIST},
+			{"alist_log_enable", "", NULL, EVM_RESTART_ALIST},
+			{"alist_log_size", "", NULL, EVM_RESTART_ALIST},
+			{"alist_log_name", "", NULL, EVM_RESTART_ALIST},
+			{"alist_log_compress", "", NULL, EVM_RESTART_ALIST},
+			{"alist_delayed", "", NULL, EVM_RESTART_ALIST},
+			{"alist_connections", "", NULL, EVM_RESTART_ALIST},
+			{"alist_s3", "", NULL, EVM_RESTART_ALIST},
+			{"alist_s3_port", "", NULL, EVM_RESTART_ALIST},
+			{"alist_s3_ssl", "", NULL, EVM_RESTART_ALIST},
+			{"alist_bin", "", NULL, EVM_RESTART_ALIST},
+			{"alist_upx", "", NULL, EVM_RESTART_ALIST},
 			{0,0,0,0}
 	};
 #endif
@@ -1340,6 +1452,18 @@
 #if defined(APP_WIREGUARD)
 		{"WIREGUARD",		variables_WIREGUARD},
 #endif
+#if defined(APP_ALIST)
+		{"ALIST",		variables_ALIST},
+#endif
+#if defined(APP_CLOUDFLARE)
+		{"CLOUDFLARE",		variables_CLOUDFLARE},
+#endif
+#if defined(APP_VNTS)
+		{"VNTS",		variables_VNTS},
+#endif
+#if defined(APP_VNTCLI)
+		{"VNTCLI",		variables_VNTCLI},
+#endif
 #if defined(APP_SQM)
 		{"SqmConf",		variables_SqmConf},
 #endif
@@ -1438,7 +1562,18 @@
 #if defined(APP_ADGUARDHOME)
 		{EVM_RESTART_ADGUARDHOME,		EVT_RESTART_ADGUARDHOME,		RCN_RESTART_ADGUARDHOME,	0},
 #endif
-
+#if defined(APP_CLOUDFLARE)
+		{EVM_RESTART_CLOUDFLARE,		EVT_RESTART_CLOUDFLARE,		RCN_RESTART_CLOUDFLARE,	0},
+#endif
+#if defined(APP_ALIST)
+		{EVM_RESTART_ALIST,		EVT_RESTART_ALIST,		RCN_RESTART_ALIST,	0},
+#endif
+#if defined(APP_VNTS)
+		{EVM_RESTART_VNTS,		EVT_RESTART_VNTS,		RCN_RESTART_VNTS,	0},
+#endif
+#if defined(APP_VNTCLI)
+		{EVM_RESTART_VNTCLI,		EVT_RESTART_VNTCLI,		RCN_RESTART_VNTCLI,	0},
+#endif
 #if defined(APP_DNSFORWARDER)
 		{EVM_RESTART_DNSFORWARDER,	EVT_RESTART_DNSFORWARDER,	RCN_RESTART_DNSFORWARDER, 0},
 #endif
