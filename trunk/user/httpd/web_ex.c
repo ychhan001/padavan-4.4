@@ -4399,7 +4399,6 @@ struct mime_handler mime_handlers[] = {
 #if defined(APP_OPENVPN)
 	{ "client.ovpn", "application/force-download", NULL, NULL, do_export_ovpn_client, 1 },
 #endif
-#endif
 #if defined(APP_VNTCLI)
 	{ "vnt-cli.log", "application/force-download", vntcli_log_txt, NULL, do_vntcli_log_file, 1 },
 #endif
