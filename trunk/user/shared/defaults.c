@@ -419,6 +419,30 @@ struct nvram_pair router_defaults[] = {
 	{ "hdd_spindt", "0" },
 	{ "hdd_apmoff", "0" },
 
+	/*WEB DIY*/
+	{ "w_ai", "1" },
+	{ "w_vpn_s", "1" },
+	{ "w_vpn_c", "1" },
+	{ "w_wnet", "1" },
+	{ "w_sys", "1" },
+	{ "w_usb", "1" },
+	{ "w_net", "1" },
+	{ "w_log", "1" },
+	{ "w_scu", "1" },
+	{ "w_dnsf", "1" },
+	{ "w_ss", "1" },
+	{ "w_men", "1" },
+	{ "w_adbyby", "1" },
+	{ "w_pdnsd", "1" },
+	{ "w_aliddns", "1" },
+	{ "w_frp", "1" },
+	{ "w_caddy", "1" },
+	{ "w_aldriver", "1" },
+	{ "w_vnts", "1" },
+	{ "w_vntcli", "1" },
+	{ "w_alist", "1" },
+	{ "w_cloudflare", "1" },
+
 	{ "ip6_service", "dhcp6" },			/* IPV6 */
 	{ "ip6_wan_if", "0" },
 
