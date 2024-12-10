@@ -9,4 +9,4 @@ config_test:
 clean:
 
 romfs:
-	$(ROMFSINST) $(THISDIR)/alist.sh /usr/bin/alist.sh
+	$(ROMFSINST) -p +x $(THISDIR)/alist.sh /usr/bin/alist.sh
