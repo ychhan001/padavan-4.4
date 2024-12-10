@@ -1512,6 +1512,121 @@ function removeFromLocalStorage(name){
     }
 }
 
+//WEB自定义菜单
+var w_ai = '<% nvram_get_x("", "w_ai"); %>';
+var w_vpn_s = '<% nvram_get_x("", "w_vpn_s"); %>';
+var w_vpn_c = '<% nvram_get_x("", "w_vpn_c"); %>';
+var w_wnet = '<% nvram_get_x("", "w_wnet"); %>';
+var w_sys = '<% nvram_get_x("", "w_sys"); %>';
+var w_usb = '<% nvram_get_x("", "w_usb"); %>';
+var w_net = '<% nvram_get_x("", "w_net"); %>';
+var w_log = '<% nvram_get_x("", "w_log"); %>';
+var w_scu = '<% nvram_get_x("", "w_scu"); %>';
+var w_dnsf = '<% nvram_get_x("", "w_dnsf"); %>';
+var w_ss = '<% nvram_get_x("", "w_ss"); %>';
+var w_men = '<% nvram_get_x("", "w_men"); %>';
+var w_adbyby = '<% nvram_get_x("", "w_adbyby"); %>';
+var w_pdnsd = '<% nvram_get_x("", "w_pdnsd"); %>';
+var w_aliddns = '<% nvram_get_x("", "w_aliddns"); %>';
+var w_frp = '<% nvram_get_x("", "w_frp"); %>';
+var w_caddy = '<% nvram_get_x("", "w_caddy"); %>';
+var w_aldriver = '<% nvram_get_x("", "w_aldriver"); %>';
+var w_vnts = '<% nvram_get_x("", "w_vnts"); %>';
+var w_vntcli = '<% nvram_get_x("", "w_vntcli"); %>';
+var w_alist = '<% nvram_get_x("", "w_alist"); %>';
+var w_cloudflare = '<% nvram_get_x("", "w_cloudflare"); %>';
+
+if (w_ai==0){
+	menuL1_link[2] = "";
+	menuL1_title[2] = "";
+}
+if (w_vpn_s==0){
+	menuL1_link[3] = "";
+	menuL1_title[3] = "";
+}
+if (w_vpn_c==0){
+	menuL1_link[4] = "";
+	menuL1_title[4] = "";
+}
+if (w_wnet==0){
+	menuL1_link[5] = "";
+	menuL1_title[5] = "";
+}
+if (w_sys==0){
+	menuL1_link[6] = "";
+	menuL1_title[6] = "";
+}
+if (w_usb==0){
+	menuL2_link[6] = "";
+	menuL2_title[6] = "";
+}
+if (w_net==0){
+	menuL2_link[9] = "";
+	menuL2_title[9] = "";
+}
+if (w_log==0){
+	menuL2_link[10] = "";
+	menuL2_title[10] = "";
+}
+if (w_scu==0){
+	menuL2_link[11] = "";
+	menuL2_title[11] = "";
+}
+if (w_dnsf==0){
+	menuL2_link[12] = "";
+	menuL2_title[12] = "";
+}
+if (w_ss==0){
+	menuL2_link[13] = "";
+	menuL2_title[13] = "";
+}
+if (w_men==0){
+	menuL2_link[14] = "";
+	menuL2_title[14] = "";
+}
+if (w_adbyby==0){
+	menuL2_link[15] = "";
+	menuL2_title[15] = "";
+}
+if (w_pdnsd==0){
+	menuL2_link[16] = "";
+	menuL2_title[16] = "";
+}
+if (w_aliddns==0){
+	menuL2_link[17] = "";
+	menuL2_title[17] = "";
+}
+if (w_frp==0){
+	menuL2_link[18] = "";
+	menuL2_title[18] = "";
+}
+if (w_caddy==0){
+	menuL2_link[19] = "";
+	menuL2_title[19] = "";
+}
+
+if (w_aldriver==0){
+	menuL2_link[21] = "";
+	menuL2_title[21] = "";
+}
+
+if (w_vnts==0){
+	menuL2_link[26] = "";
+	menuL2_title[26] = "";
+}
+if (w_vntcli==0){
+	menuL2_link[27] = "";
+	menuL2_title[27] = "";
+}
+if (w_alist==0){
+	menuL2_link[30] = "";
+	menuL2_title[30] = "";
+}
+if (w_cloudflare==0){
+	menuL2_link[31] = "";
+	menuL2_title[31] = "";
+}
+
 (function($){
     var $j = $.noConflict();
     $j.fn.tabSlideOut = function(callerSettings){
