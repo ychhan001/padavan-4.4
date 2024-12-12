@@ -9,4 +9,5 @@ config_test:
 clean:
 
 romfs:
-	$(ROMFSINST) $(THISDIR)/vnt.sh /usr/bin/vnt.sh
+	cp $(THISDIR)/vnt.sh $(ROMFS_DIR)/usr/bin/vnt.sh
+	chmod +x $(ROMFS_DIR)/usr/bin/vnt.sh
