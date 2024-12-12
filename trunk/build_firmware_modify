@@ -43,7 +43,7 @@ echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #aliddns
 echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=y" >> .config #ddnsto  ~0.5M
 
 echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> .config  #ALDRIVER  ~3m
-echo "CONFIG_FIRMWARE_INCLUDE_ALIST=y" >> .config #Alist文件列表
+echo "CONFIG_FIRMWARE_INCLUDE_ALIST=n" >> .config #Alist文件列表
 echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #mentohust
 echo "CONFIG_FIRMWARE_INCLUDE_SQM=y" >> .config #SQM
 echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y" >>.config #wireguard 10k
