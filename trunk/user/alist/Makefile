@@ -3,9 +3,11 @@ THISDIR = $(shell pwd)
 
 all:
 
-extract_test:
 
 config_test:
+
+configure:
+
 clean:
 
 romfs:
