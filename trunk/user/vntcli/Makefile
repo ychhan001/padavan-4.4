@@ -3,12 +3,10 @@ THISDIR = $(shell pwd)
 
 all:
 
+extract_test:
+
 config_test:
-
-configure:
-
 clean:
 
 romfs:
-	   $(ROMFSINST) -p +x $(THISDIR)/vnt-cli /usr/bin/vnt-cli
-           $(ROMFSINST) -p +x $(THISDIR)/vnt.sh /usr/bin/vnt.sh
+	$(ROMFSINST) $(THISDIR)/vnt.sh /usr/bin/vnt.sh
