@@ -3,12 +3,10 @@ THISDIR = $(shell pwd)
 
 all:
 
+extract_test:
 
 config_test:
-
-configure:
-
 clean:
 
 romfs:
-	$(ROMFSINST) -p +x $(THISDIR)/alist.sh /usr/bin/alist.sh
+	$(ROMFSINST) $(THISDIR)/alist.sh /usr/bin/alist.sh
