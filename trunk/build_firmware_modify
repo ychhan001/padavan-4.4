@@ -50,10 +50,10 @@ echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y" >>.config #wireguard 10k
 echo "CONFIG_FIRMWARE_INCLUDE_FRPC=n" >> .config #frpc
 echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> .config #frps
 
-echo "CONFIG_FIRMWARE_INCLUDE_CLOUDFLARE=y" >> .config #cfddns
+echo "CONFIG_FIRMWARE_INCLUDE_CLOUDFLARE=n" >> .config #cfddns
 echo "CONFIG_FIRMWARE_INCLUDE_CLOUDFLARED=n" >> .config #cloudflare的隧道
-echo "CONFIG_FIRMWARE_INCLUDE_VNTS=y" >> .config #vnt服务器
-echo "CONFIG_FIRMWARE_INCLUDE_VNTCLI=y" >> .config #vnt客户端
+echo "CONFIG_FIRMWARE_INCLUDE_VNTS=n" >> .config #vnt服务器
+echo "CONFIG_FIRMWARE_INCLUDE_VNTCLI=n" >> .config #vnt客户端
 ##内网穿透服务##
 #CPU超频
 echo "CONFIG_FIRMWARE_INCLUDE_OC=n" >> .config #CPU超频开关
