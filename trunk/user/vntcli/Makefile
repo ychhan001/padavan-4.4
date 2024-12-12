@@ -1,17 +1,12 @@
 SRC_NAME = VNT-CLI
-TARGET_FILE = vnt.sh
-DEST_DIR = /usr/bin/
+THISDIR = $(shell pwd)
 
-# 定义目标
-all: install
+all:
 
-# 拷贝文件的规则
-install:
-	@echo "Copying $(TARGET_FILE) to $(DEST_DIR)"
-	@sudo cp $(TARGET_FILE) $(DEST_DIR)
-	@sudo chmod +x $(DEST_DIR)$(TARGET_FILE)
-	@echo "Installation complete."
+extract_test:
 
-# 清理（可选）
+config_test:
 clean:
-	@echo "No clean operation defined."
+
+romfs:
+	$(ROMFSINST) $(THISDIR)/vnt.sh /usr/bin/vnt.sh
