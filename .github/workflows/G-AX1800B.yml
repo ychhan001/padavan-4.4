@@ -69,6 +69,10 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_DDNSTO/d' .config #删除配置项ddnsto
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ZEROTIER/d' .config #删除配置项zerotier
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' .config #删除配置项阿里DDNS
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_VNTCLI/d' .config #删除配置项VNTCLI
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_VNTS/d' .config #删除配置项VNTS
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_CLOUDFLARE/d' .config #删除配置项CLOUDFLARE
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIST/d' .config #删除配置项ALIST
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMARTDNS/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY/d' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
