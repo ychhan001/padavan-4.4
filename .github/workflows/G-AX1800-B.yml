@@ -1,5 +1,5 @@
 #修改TNAME: K2P 中的K2P为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
-name: Build Padavan
+name: G-AX1800-B
 
 on: 
   release:
@@ -44,7 +44,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: G-AX1800B
+        TNAME: G-AX1800-B
         KERNEL: 4.4
       run: |
         cd /opt/rt-n56u/trunk
@@ -137,5 +137,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: Padavan-G-AX1800B-4.4
+        name: Padavan-G-AX1800-B-4.4
         path: /opt/images
