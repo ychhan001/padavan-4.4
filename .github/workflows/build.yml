@@ -37,6 +37,8 @@ on:
         - 'MSG1500-Z'
         - 'NETGEAR-BZV'
         - 'NEWIFI'
+        - 'G-AX1800-B'
+        - 'G-AX1800'
         - 'NEWIFI3'
         - 'QM-B1'
         - 'R2100'
