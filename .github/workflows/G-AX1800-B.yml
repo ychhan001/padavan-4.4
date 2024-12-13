@@ -26,10 +26,17 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo apt-get update
-        sudo apt-get -y install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot \
-        cpio git python-docutils gettext automake autopoint texinfo build-essential help2man \
-        pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
+        sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
+        fakeroot kmod cpio git python3-docutils gettext automake autopoint \
+        texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
+        libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
+        sudo pacman -Syu --needed git base-devel cmake gperf ncurses libmpc \
+        gmp python-docutils vim rpcsvc-proto fakeroot cpio help2man
+        sudo apk add make gcc g++ cpio curl wget nano xxd kmod \
+        pkgconfig rpcgen fakeroot ncurses bash patch \
+        bsd-compat-headers python2 python3 zlib-dev \
+        automake gettext gettext-dev autoconf bison \
+        flex coreutils cmake git libtool gawk sudo
     - name: Clone source code
       env:
         KERNEL: 4.4
