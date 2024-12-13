@@ -30,8 +30,6 @@ jobs:
         fakeroot kmod cpio git python3-docutils gettext automake autopoint \
         texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
         libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
-        sudo pacman -Syu --needed git base-devel cmake gperf ncurses libmpc \
-        gmp python-docutils vim rpcsvc-proto fakeroot cpio help2man
         sudo apk add make gcc g++ cpio curl wget nano xxd kmod \
         pkgconfig rpcgen fakeroot ncurses bash patch \
         bsd-compat-headers python2 python3 zlib-dev \
